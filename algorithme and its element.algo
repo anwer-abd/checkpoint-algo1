@@ -1,0 +1,32 @@
+ALGORITHM carateristique_chaine
+VAR
+   chaine : STRING[50];
+   i,mots,voyelles,nbre_caractere : INTEGER:=0;
+BEGIN
+   Write("Donner une chaine");
+   Read(chaine);
+       /*Une boucle FOR pour parrcourir la chaine de caractere*/
+       FOR i FROM 0 TO chaine.length-1 STEP 1 DO
+
+           IF (chaine[i] == " ") THEN
+           {
+               mots := mots+1;
+           }   
+           ELSE IF (chaine[i] IN ["a","e","u","i","y"] ) THEN
+           {
+               voyelles := voyelles+1; 
+               nbre_caractere := nbre_caractere+1; //le voyelle est un caractere aussi
+           }
+          
+           ELSE 
+           {
+               nbre_caractere := nbre_caractere+1; 
+           }
+           END_IF
+               
+           
+               
+       END_FOR
+       
+  
+END
